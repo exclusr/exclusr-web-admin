@@ -1,0 +1,22 @@
+<div ng-controller="SigninController">
+  <b>Signin</b>
+
+  <form role="form" ng-submit="signin()">
+    
+    <div>
+      <label>Username: </label>
+      <input type="text" id="username" ng-model="username"/>
+    </div>
+
+    <div>
+      <label>Password: </label>
+      <input type="password" id="password" ng-model="password"/>
+    </div>
+
+    <div>
+      <button type="submit">Sign in</button>
+    </div>
+
+  </form>
+
+</div>
