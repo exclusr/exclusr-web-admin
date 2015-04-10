@@ -1,0 +1,209 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1>Venues</h1>
+    <button   
+            type="button"
+            class="btn btn-default"
+            ng-click="showModalCreateVenue()">
+      Create
+    </button>
+  </div>
+</div>
+
+<div class="row">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Longitude</th>
+        <th>Latitude</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="venue in venues"
+          ng-click="showModalUpdateVenue(venue)">
+        <td>{{venue.name}}</td>
+        <td>{{venue.location.coordinates[0]}}</td>
+        <td>{{venue.location.coordinates[1]}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- modal create venue-->
+<div  class="modal fade" 
+      id="modalNewVenue"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="modalNewVenueLabel"
+      aria-hidden="true">
+  <div  class="modal-dialog">
+    <div  class="modal-content">
+      <div  class="modal-header">
+        <button   class="close"
+                  type="button"
+                  data-dismiss="modal"
+                  aria-label="Close">
+          <span   aria-hidden="true">
+            &times;
+          </span>
+        </button>
+        <h4   class="modal-title"
+              id="modalNewVenueLabel">
+          Creation New Venue
+        </h4>
+      </div>
+      <div  class="modal-body">
+
+
+        <form role="form"
+              data-toggle="validator">
+          <div  class="form-group">
+            <label
+                  for="name"
+                  class="control-label">
+              Name
+            </label>
+            <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  ng-model="venue.name"
+                  required/>
+          </div>
+
+          <div>
+            <label
+                  for="longitude"
+                  class="control-label">
+              Longitude
+            </label>
+            <input
+                  type="text"
+                  class="form-control"
+                  id="longitude"
+                  ng-model="venue.longitude"
+                  required/>
+          </div>
+
+          <div>
+            <label
+                  for="latitude"
+                  class="control-label">
+              Latitude
+            </label>
+            <input
+                  type="text"
+                  class="form-control"
+                  id="latitude"
+                  ng-model="venue.latitude"
+                  required/>
+          </div>
+        </form>
+
+
+      </div>
+      <div  class="modal-footer">
+        <button class="btn btn-default"
+                type="button"
+                data-dismiss="modal">
+          Close
+        </button>
+        <button   class="btn btn-primary"
+                  type="button"
+                  ng-click="createNewVenue()">
+          Create
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal update venue-->
+<div  class="modal fade" 
+      id="modalUpdateVenue"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="modalUpdateVenueLabel"
+      aria-hidden="true">
+  <div  class="modal-dialog">
+    <div  class="modal-content">
+      <div  class="modal-header">
+        <button   class="close"
+                  type="button"
+                  data-dismiss="modal"
+                  aria-label="Close">
+          <span   aria-hidden="true">
+            &times;
+          </span>
+        </button>
+        <h4   class="modal-title"
+              id="modalUpdateVenueLabel">
+          Updating New Venue
+        </h4>
+      </div>
+      <div  class="modal-body">
+
+
+        <form role="form"
+              data-toggle="validator">
+          <div  class="form-group">
+            <label
+                  for="name"
+                  class="control-label">
+              Name
+            </label>
+            <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  ng-model="venue.name"
+                  required/>
+          </div>
+
+          <div>
+            <label
+                  for="longitude"
+                  class="control-label">
+              Longitude
+            </label>
+            <input
+                  type="text"
+                  class="form-control"
+                  id="longitude"
+                  ng-model="venue.longitude"
+                  required/>
+          </div>
+
+          <div>
+            <label
+                  for="latitude"
+                  class="control-label">
+              Latitude
+            </label>
+            <input
+                  type="text"
+                  class="form-control"
+                  id="latitude"
+                  ng-model="venue.latitude"
+                  required/>
+          </div>
+        </form>
+
+
+      </div>
+      <div  class="modal-footer">
+        <button class="btn btn-default"
+                type="button"
+                data-dismiss="modal">
+          Close
+        </button>
+        <button   class="btn btn-primary"
+                  type="button"
+                  ng-click="updateVenue()">
+          Update
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

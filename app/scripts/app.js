@@ -2,6 +2,7 @@
 
 angular
   .module('exclusrWeb', ['ngStorage', 'ngRoute'])
+  // .constant('SERVER_API_URL', 'http://localhost:9000')
   .constant('SERVER_API_URL', 'https://exclusr-api.herokuapp.com')
   .config([
     '$routeProvider',
@@ -17,6 +18,10 @@ angular
           templateUrl: 'partials/users.html',
           controller: 'UsersController'
           // controller: 'SigninController'
+        })
+        .when('/venues', {
+          templateUrl: 'partials/venues.html',
+          controller: 'VenuesController'
         })
         // .when('/users', {
         //   templateUrl: 'partials/users.html',

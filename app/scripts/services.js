@@ -2,6 +2,47 @@
 
 angular
   .module('exclusrWeb')
+  .factory('VenueService', [
+    'SERVER_API_URL',
+    function (SERVER_API_URL) {
+      return {
+        getVenues: function (filter, feedback) {
+          $.ajax({
+            type: 'GET',
+            url: SERVER_API_URL + '/api/venues?filter=' + filter
+          }).done(function (data) {
+            feedback(null, data.venues);
+          }).error(function (err) {
+            feedback(err);
+          });
+        },
+        createVenue: function (venue, feedback) {
+          $.ajax({
+            url: SERVER_API_URL + '/api/venues',
+            type: 'POST',
+            data: venue,
+          }).done(function (data) {
+            feedback(null, data.venue);
+          }).error(function (err) {
+            feedback(err);
+          });
+        },
+        editVenue: function (venue, feedback) {
+          console.log('venue: ');
+          console.log(venue);
+          $.ajax({
+            url: SERVER_API_URL + '/api/venues/' + venue._id,
+            type: 'PUT',
+            data: venue
+          }).done(function (data) {
+            feedback(null, data.venue);
+          }).error(function (err) {
+            feedback(err);
+          });
+        }
+      };
+    }
+  ])
   .factory('UserService', [
     '$http',
     '$localStorage',
