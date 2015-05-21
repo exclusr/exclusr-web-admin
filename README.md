@@ -17,3 +17,12 @@ $ git checkout development
 $ sudo npm install
 $ node server.js
 ```
+
+## Links
+
+- For managing users
+    - https://mighty-tundra-9068.herokuapp.com/#/ (production)
+    - http://localhost:3000/#/ (local)
+- For mananing venues
+    - https://mighty-tundra-9068.herokuapp.com/#/venues (production)
+    - http://localhost:3000/#/venues (local)
