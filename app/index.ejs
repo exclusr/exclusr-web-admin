@@ -23,6 +23,12 @@
   <script src="/lib/is.min.js"></script>
   <script src="/lib/ngStorage.js"></script>
   <script src="/scripts/app.js"></script>
+  <script>
+    var url = <%- JSON.stringify(SERVER_URL) %>;
+    angular
+      .module('exclusrWeb')
+      .constant('SERVER_API_URL', url);
+  </script>
   <script src="/scripts/controllers.js"></script>
   <script src="/scripts/services.js"></script>
 </body>

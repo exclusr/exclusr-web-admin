@@ -2,8 +2,6 @@
 
 angular
   .module('exclusrWeb', ['ngStorage', 'ngRoute'])
-  // .constant('SERVER_API_URL', 'http://localhost:9000')
-  .constant('SERVER_API_URL', 'https://exclusr-api.herokuapp.com')
   .config([
     '$routeProvider',
     '$httpProvider',
